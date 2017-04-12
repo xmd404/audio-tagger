@@ -1,6 +1,16 @@
 function getCurTime() {
     var audio = document.getElementById("myAudio");
-    var comment = document.getElementById("myComment").value;
+    var text = '<li>text</li>';
 
-    alert("Your comment:" + " " + "'" + comment + "'" + " " + "was tagged at" + " " + audio.currentTime);
+    var name = document.getElementById("myName").value;
+    var comment = document.getElementById("myComment").value;
+    var timeStamp = audio.currentTime;
+
+    var postedComment = name + ":" + " " + comment + " " + "@" + " " + timeStamp;
+
+    var addPostedComment = 
+    document.getElementById("comments").innerHTML = postedComment;
+
+    
+
 }

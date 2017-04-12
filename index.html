@@ -10,8 +10,8 @@
 
   <!-- Page Information
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <title>Audio Player</title>
-  <meta name="description" content="Audio Player">
+  <title>Audio Tagger v1.0</title>
+  <meta name="description" content="Audio Tagger">
   <meta name="author" content="Xavier Duncan">
 
   <!-- CSS
@@ -38,28 +38,29 @@
         <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:100%">
         <p>Audio Tagger v1.0 is a custom HTML5 audio widget built for the <a href="https://webuildmonsters.co">We Build Monsters</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear at the time stamp it was posted</p>
         
-        <audio id="myAudio" controls style="width: 100%;">
+        <audio id="myAudio" style="width: 100%;" controls>
             <source src="./assets/rari.mp3" type="audio/mp3">
             Your browser does not support HTML5 audio.
         </audio>
 
+        <br/>
+
+        <p id="comments"></p>
+
         <hr/>
 
-        <form onSubmit="JavaScipt:getCurTime()">
-            <input class="w3-input" id="myComment" type="text" placeholder="Enter comment" required>
-            <br/>
-            <button class="w3-btn w3-green" type="submit"><i class="fa fa-send"></i>&nbsp; Post</button>
+        <form>
+            <input class="w3-input" id="myName" type="text" placeholder="Name" required>
+            <textarea class="w3-input" id="myComment" type="text" placeholder="Enter comment..." required></textarea>
         </form>
 
-        <hr/>
+        <br/>
 
-        <a class="w3-btn w3-blue" href="https://github.com/xduncan/audio-tagger"><i class="fa fa-github"></i>&nbsp; Fork on GitHub</a>
-        &nbsp;
-        <a class="w3-btn w3-blue" href="http://xduncan.github.io/audio-tagger"><i class="fa fa-twitter"></i>&nbsp; Tweet</a>
-        <br/><br/>
+        <button class="w3-btn w3-green" type="submit" onclick="getCurTime();"><i class="fa fa-send"></i>&nbsp; Post</button>
     </div>
           
     <div class="w3-content w3-large" style="max-width:650px">
+        <br/>
         <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:100%">
         <br/>
         <a href="https://xavierduncan.com" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0";></i></a>
