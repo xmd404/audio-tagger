@@ -6,6 +6,9 @@ body, html {height: 100%}
     background-position: center;
     background-size: cover;
 }
+.listItem {
+    list-style: none;
+}
 u {    
     border-bottom: 1px dashed #FFF;
     text-decoration: none;

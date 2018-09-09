@@ -36,36 +36,38 @@
     <div class="w3-content w3-large" style="max-width:650px">
         <h4><b><i class="fa fa-headphones"></i> Audio Tagger v1.0</b></h4>
         <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:100%">
-        <p>Audio Tagger v1.0 is a custom HTML5 audio widget built for the <a href="https://webuildmonsters.co">We Build Monsters</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear at the time stamp it was posted</p>
+        <p>Audio Tagger is a custom audio feature built for the <a href="https://soundtap.me">SoundTap</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear at the time stamp it was posted</p>
 
-        <audio id="myAudio" style="width: 100%;" controls>
+        <audio class="audio" style="width: 100%;" controls>
             <source src="./assets/coltrane.mp3" type="audio/mp3">
             Your browser does not support HTML5 audio.
         </audio>
 
         <br/>
-
-        <p id="comments"></p>
-
+        
         <hr/>
 
         <form>
-            <input class="w3-input" id="myName" type="text" placeholder="Name" required>
-            <textarea class="w3-input" id="myComment" type="text" placeholder="Enter comment..." required></textarea>
+            <input class="w3-input name" type="text" placeholder="Name" required>
+            <textarea class="w3-input comment" type="text" placeholder="Enter comment..." required></textarea>
         </form>
 
         <br/>
 
-        <button class="w3-btn w3-green" type="submit" onclick="getCurTime();"><i class="fa fa-send"></i>&nbsp; Post</button>
+        <button class="w3-btn w3-green" type="submit" onclick="bindData();"><i class="fa fa-send"></i>&nbsp; Post</button>
+
+        <div>
+            <ul id="comments"></ul>
+        </div>
     </div>
 
     <div class="w3-content w3-large" style="max-width:650px">
         <br/>
         <hr class="w3-border-grey w3-animate-top" style="margin:auto;width:100%">
         <br/>
-        <a href="https://xavierduncan.com" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0";></i></a>
+        <a href="http://xavierduncan.com" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0";></i></a>
         <a href="https://linkedin.com/in/xduncan" target="_blank"><i class="fa fa-linkedin-square" style="padding: 0 20px 0 0";></i></a>
-        <a href="https://github.com/xduncan" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://github.com/theWebsiteKid" target="_blank"><i class="fa fa-github-alt"></i></a>
     </div>
     <br/>
 </div>
