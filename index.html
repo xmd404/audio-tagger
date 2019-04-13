@@ -11,7 +11,7 @@
     <title>Audio Tagger v1.0</title>
     <meta name="description" content="Audio Tagger">
     <meta name="author" content="Xavier Duncan">
-    <!-- CSS
+    <!-- Stylesheets
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -24,12 +24,13 @@
     <link rel="icon" type="images/ico" href="images/favicon.ico"> -->
 </head>
 <body>
+    <div id='root'></div>
     <div class="bgimg w3-container w3-animate-opacity w3-text-white">
         <br/>
         <div class="w3-content w3-large" style="max-width:650px">
-            <h4><b><i class="fa fa-headphones"></i> Audio Tagger v1.0</b></h4>
+            <h4><b><i class="fa fa-headphones"></i>&nbsp; audio-tagger</b></h4>
             <hr style="margin:auto;width:100%">
-            <p>Audio Tagger is a custom audio feature built for the <a href="https://soundtap.me" target='_blank'>SoundTap</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear at the time stamp it was posted</p>
+            <p>A custom audio feature built for the <a href="https://soundtap.me" target='_blank'>SoundTap</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.</p>
             <audio class="audio" style="width: 100%;" controls>
                 <source src="./assets/coltrane.mp3" type="audio/mp3">
                 Your browser does not support HTML5 audio.
@@ -38,9 +39,15 @@
             <hr/>
             <form>
                 <input class="w3-input name" type="text" placeholder="Name" required>
-                <textarea class="w3-input comment" type="text" placeholder="Enter comment..." required></textarea>
+                <input class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
                 <br />
-                <button class="w3-btn w3-green" type="submit" onclick="bindData(), this.form.reset()"><i class="fa fa-send"></i>&nbsp; Post</button>
+                <button
+                    class="w3-btn w3-green"
+                    onclick="bindData(), this.form.reset()">
+                    <i class="fa fa-send"></i>
+                    &nbsp; Post
+                </button>
+                <input type="submit" style="display:none"/>
             </form>
             <div>
                 <ul id="comments"></ul>
