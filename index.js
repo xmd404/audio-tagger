@@ -3,24 +3,35 @@ const HomePage = () => {
     const root = document.getElementById('root');
 }
 // get name & comment values
-const getNameComment = () => {
-    let name = document.getElementsByClassName('name')[0].value;
-    let comment = document.getElementsByClassName('comment')[0].value;
+const getNameComment = (name, comment) => {
+    name = document.getElementsByClassName('name')[0].value;
+    comment = document.getElementsByClassName('comment')[0].value;
     return [name, comment];
 };
 // get audio time stamp
-const getTimeStamp = () => {
-    let audio = document.getElementsByClassName("audio")[0];
-    let seconds = parseInt(audio.currentTime % 60);
-    let minutes = parseInt((audio.currentTime / 60) % 60);
-    let audioTimeStamp = minutes + ':' + seconds;
+const getTimeStamp = (audio, seconds, minutes, audioTimeStamp) => {
+    audio = document.getElementsByClassName("audio")[0];
+    seconds = parseInt(audio.currentTime % 60);
+    minutes = parseInt((audio.currentTime / 60) % 60);
+    audioTimeStamp = minutes + ':' + seconds;
     return audioTimeStamp;
 };
 // bind data to audio time stamp
 const bindData = () => {
     [name, comment] = getNameComment();
     audioTimeStamp = getTimeStamp();
-    console.log({ name, comment, audioTimeStamp });
+    let data = {name, comment, audioTimeStamp};
+    if (data.name == '' || data.comment == '') {
+        alert('must complete form!');
+        return;
+    } else {
+        console.log(data);
+        return data;
+    }
+};
+// render data to screen
+const renderData = (data) => {
+    const { name, comment, audioTimeStamp } = data;
     // create <p> element
     // get element by listItemData class name
     // init listItemData text
