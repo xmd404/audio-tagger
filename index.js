@@ -1,11 +1,15 @@
+// build homepage
+const HomePage = () => {
+    const root = document.getElementById('root');
+}
 // get name & comment values
-let getNameComment = () => {
+const getNameComment = () => {
     let name = document.getElementsByClassName('name')[0].value;
     let comment = document.getElementsByClassName('comment')[0].value;
     return [name, comment];
 };
 // get audio time stamp
-let getTimeStamp = () => {
+const getTimeStamp = () => {
     let audio = document.getElementsByClassName("audio")[0];
     let seconds = parseInt(audio.currentTime % 60);
     let minutes = parseInt((audio.currentTime / 60) % 60);
@@ -13,10 +17,10 @@ let getTimeStamp = () => {
     return audioTimeStamp;
 };
 // bind data to audio time stamp
-let bindData = () => {
+const bindData = () => {
     [name, comment] = getNameComment();
     audioTimeStamp = getTimeStamp();
-    console.log(name, comment, audioTimeStamp);
+    console.log({ name, comment, audioTimeStamp });
     // create <p> element
     // get element by listItemData class name
     // init listItemData text
