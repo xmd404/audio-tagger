@@ -1,12 +1,6 @@
-<<<<<<< HEAD:index.js
 // build homepage
 const HomePage = () => {
     const root = document.getElementById('root');
-=======
-/ build homepage
-const HomePage = () => {
-  const root = document.getElementById('root');
->>>>>>> ed2e158e57309907b728d7b67463a793b36e5c67:js/scripts.js
 }
 // get name & comment values
 const getNameComment = () => {
