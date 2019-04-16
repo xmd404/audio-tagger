@@ -1,15 +1,11 @@
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-color: #000;
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
-}
-.listItem {
-    list-style: none;
-}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000; }
 u {    
     border-bottom: 1px dashed #FFF;
-    text-decoration: none;
-}
+    text-decoration: none; }
+.listItem {
+    list-style: none; }
