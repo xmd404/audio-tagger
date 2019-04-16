@@ -46,6 +46,7 @@ const renderData = (data) => {
     listItem.appendChild(listItemData);
     // get element by comments id name
     // append listItem to commentList
-    let commentList = document.getElementById('comments');
+    let commentList = document.createElement('ul');
+    commentList.classList.add('commentList');
     commentList.appendChild(listItem);
 };
