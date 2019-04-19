@@ -1,6 +1,29 @@
+// set root element
+const root = document.getElementById('root');
 // build homepage
 const HomePage = () => {
-    const root = document.getElementById('root');
+    const title = document.createElement('h1');
+    title.classList.add('title');
+    title.innerText = 'audio-tagger';
+    const description = document.createElement('p');
+    description.classList.add('description');
+    description.innerText = 'A custom audio feature built for the SoundTap platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.';
+    const nameField = document.createElement('input');
+    nameField.setAttribute('type', 'text');
+    nameField.setAttribute('placeholder', 'Name');
+    nameField.setAttribute('required', 'required');
+    const commentField = document.createElement('input');
+    commentField.setAttribute('type', 'text');
+    commentField.setAttribute('placeholder', 'Comment');
+    commentField.setAttribute('required', 'required');
+    // apend form elements to form
+    const form = document.createElement('form');
+    form.appendChild(nameField);
+    form.appendChild(commentField);
+    // append title, description, and form to root element
+    root.appendChild(title);
+    root.appendChild(description);
+    root.appendChild(form);
 }
 // get name & comment values
 const getNameComment = (name, comment) => {
@@ -42,3 +65,5 @@ const renderData = (data) => {
     commentList.classList.add('commentList');
     commentList.appendChild(listItem);
 }
+
+HomePage();
