@@ -9,7 +9,7 @@ const getTimeStamp = (audio, seconds, minutes, audioTimeStamp) => {
 	audio = document.getElementsByClassName('audio')[0];
 	seconds = parseInt(audio.currentTime % 60);
 	minutes = parseInt((audio.currentTime / 60) % 60);
-	audioTimeStamp = minutes + ':' + seconds;
+	audioTimeStamp = `${minutes} : ${seconds}`;
 	return audioTimeStamp;
 };
 // bind data to audio time stamp
