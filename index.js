@@ -50,10 +50,11 @@ const HomePage = () => {
 	const audioSource = document.createElement('source');
 	audioSource.setAttribute('src', './assets/coltrane.mp3');
 	audioSource.setAttribute('type', 'audio/mp3');
-	const audio = document.createElement('audio');
-	audio.classList.add('audio');
-	audio.setAttribute('controls', 'controls');
-	audio.appendChild(audioSource);
+	const audioPlayer = document.createElement('audio');
+	audioPlayer.classList.add('audio');
+	audioPlayer.setAttribute('controls', 'controls');
+	audioPlayer.innerText = 'Your browser does not support HTML5 audio.'
+	audioPlayer.appendChild(audioSource);
 	const nameField = document.createElement('input');
 	nameField.classList.add('name');
 	nameField.setAttribute('type', 'text');
@@ -67,7 +68,7 @@ const HomePage = () => {
 	const submitButton = document.createElement('input');
 	submitButton.setAttribute('type', 'submit');
 	submitButton.setAttribute('value', 'Submit');
-	submitButton.addEventListener('click', bindData());
+	submitButton.addEventListener('click', bindData);
 	// submitButton.onclick = bindData();
 	// apend form elements to form
 	const form = document.createElement('form');
@@ -78,7 +79,7 @@ const HomePage = () => {
 	const root = document.getElementById('root');
 	root.appendChild(title);
 	root.appendChild(description);
-	root.appendChild(audio);
+	root.appendChild(audioPlayer);
 	root.appendChild(form);
 };
 
