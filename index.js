@@ -22,6 +22,7 @@ const bindData = () => {
 		return;
 	} else {
 		console.log(data);
+		return data;
 	}
 };
 // render data to screen
@@ -46,6 +47,13 @@ const HomePage = () => {
 	description.classList.add('description');
 	description.innerText =
 		'A custom audio feature built for the SoundTap platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.';
+	const audioSource = document.createElement('source');
+	audioSource.setAttribute('src', './assets/coltrane.mp3');
+	audioSource.setAttribute('type', 'audio/mp3');
+	const audio = document.createElement('audio');
+	audio.classList.add('audio');
+	audio.setAttribute('controls', 'controls');
+	audio.appendChild(audioSource);
 	const nameField = document.createElement('input');
 	nameField.classList.add('name');
 	nameField.setAttribute('type', 'text');
@@ -59,7 +67,7 @@ const HomePage = () => {
 	const submitButton = document.createElement('input');
 	submitButton.setAttribute('type', 'submit');
 	submitButton.setAttribute('value', 'Submit');
-	submitButton.addEventListener('click', bindData);
+	submitButton.addEventListener('click', bindData());
 	// submitButton.onclick = bindData();
 	// apend form elements to form
 	const form = document.createElement('form');
@@ -70,6 +78,7 @@ const HomePage = () => {
 	const root = document.getElementById('root');
 	root.appendChild(title);
 	root.appendChild(description);
+	root.appendChild(audio);
 	root.appendChild(form);
 };
 
