@@ -2,7 +2,7 @@
 const getNameComment = () => {
 	let name = document.getElementsByClassName('name')[0].value;
 	let comment = document.getElementsByClassName('comment')[0].value;
-	return [ name, comment ];
+	return [name, comment];
 };
 // get audio time stamp
 const getTimeStamp = () => {
@@ -15,21 +15,32 @@ const getTimeStamp = () => {
 // bind data to audio time stamp
 const bindData = (e) => {
 	e.preventDefault();
-	[ name, comment ] = getNameComment();
+	[name, comment] = getNameComment();
 	audioTimeStamp = getTimeStamp();
-	let data = { name, comment, audioTimeStamp };
+	const data = {
+		name,
+		comment,
+		audioTimeStamp
+	};
 	if (data.name == '' || data.comment == '') {
 		console.log('Error: form not complete!');
 		alert('must complete form!');
 	} else {
-		console.log('Success: ', {data});
+		console.log('Success: ', {
+			data
+		});
 		renderData(data);
+		localStorage.setItem('tag', JSON.stringify(data));
 		form.reset();
 	}
 };
 // render data to screen
 const renderData = (data) => {
-	const { name, comment, audioTimeStamp } = data;
+	const {
+		name,
+		comment,
+		audioTimeStamp
+	} = data;
 	let listItemData = document.createElement('p');
 	listItemData.classList.add('listItemData');
 	listItemData.innerText = `${name}: ${comment} @ ${audioTimeStamp}`;
