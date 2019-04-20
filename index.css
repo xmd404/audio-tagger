@@ -10,3 +10,7 @@ u {
     text-decoration: none; }
 .listItem {
     list-style: none; }
+.attribution {
+    padding: 2.75em;
+    color: #fff;
+}
