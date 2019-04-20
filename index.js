@@ -1,10 +1,13 @@
-// get name & comment values
-const getNameComment = () => {
+// capture name & comment
+const getName = () => {
 	let name = document.getElementsByClassName('name')[0].value;
-	let comment = document.getElementsByClassName('comment')[0].value;
-	return [name, comment];
+	return name;
 };
-// get audio time stamp
+const getComment = () => {
+	let comment = document.getElementsByClassName('comment')[0].value;
+	return comment;
+}
+// capture audio timestamp
 const getTimeStamp = () => {
 	let audio = document.getElementsByClassName('audio')[0];
 	let seconds = parseInt(audio.currentTime % 60);
@@ -12,10 +15,11 @@ const getTimeStamp = () => {
 	let audioTimeStamp = `${minutes} : ${seconds}`;
 	return audioTimeStamp;
 };
-// bind data to audio time stamp
+// bind name & comment to audio timestamp
 const bindData = (e) => {
 	e.preventDefault();
-	[name, comment] = getNameComment();
+	name = getName();
+	comment = getComment();
 	audioTimeStamp = getTimeStamp();
 	const data = {
 		name,
@@ -54,6 +58,7 @@ const renderData = (data) => {
 };
 // build homepage
 const HomePage = () => {
+	// title + description
 	const title = document.createElement('h1');
 	title.classList.add('title');
 	title.innerText = 'audio-tagger';
@@ -61,6 +66,27 @@ const HomePage = () => {
 	description.classList.add('description');
 	description.innerText =
 		'A custom audio feature built for the SoundTap platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.';
+	// attribution
+	const website = document.createElement('a');
+	website.classList.add('attribution');
+	website.innerText = 'website';
+	website.setAttribute('href', 'http://xavier.fun');
+	website.setAttribute('target', '_blank');
+	const linkedin = document.createElement('a');
+	linkedin.classList.add('attribution');
+	linkedin.innerText = 'linkedin';
+	linkedin.setAttribute('href', 'https://linkedin.com/in/xduncan');
+	linkedin.setAttribute('target', '_blank');
+	const github = document.createElement('a');
+	github.classList.add('attribution');
+	github.innerText = 'github';
+	github.setAttribute('href', 'https://github.com/xmd404');
+	github.setAttribute('target', '_blank');
+	const attribution = document.createElement('footer');
+	attribution.appendChild(website);
+	attribution.appendChild(linkedin);
+	attribution.appendChild(github);
+	// audio player
 	const audioSource = document.createElement('source');
 	audioSource.setAttribute('src', './assets/coltrane.mp3');
 	audioSource.setAttribute('type', 'audio/mp3');
@@ -68,6 +94,7 @@ const HomePage = () => {
 	audioPlayer.classList.add('audio');
 	audioPlayer.setAttribute('controls', 'controls');
 	audioPlayer.innerText = 'Your browser does not support HTML5 audio.';
+	// comment form
 	audioPlayer.appendChild(audioSource);
 	const nameField = document.createElement('input');
 	nameField.classList.add('name');
@@ -92,6 +119,7 @@ const HomePage = () => {
 	const root = document.getElementById('root');
 	root.appendChild(title);
 	root.appendChild(description);
+	root.appendChild(attribution);
 	root.appendChild(audioPlayer);
 	root.appendChild(form);
 };
