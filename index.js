@@ -13,16 +13,17 @@ const getTimeStamp = () => {
 	return audioTimeStamp;
 };
 // bind data to audio time stamp
-const bindData = () => {
+const bindData = (e) => {
+	e.preventDefault();
 	[ name, comment ] = getNameComment();
 	audioTimeStamp = getTimeStamp();
 	let data = { name, comment, audioTimeStamp };
 	if (data.name == '' || data.comment == '') {
+		console.log('Error: form not complete!');
 		alert('must complete form!');
-		return;
 	} else {
-		console.log(data);
-		return data;
+		console.log('Success: ', {data});
+		renderData(data);
 	}
 };
 // render data to screen
@@ -37,6 +38,7 @@ const renderData = (data) => {
 	let commentList = document.createElement('ul');
 	commentList.classList.add('commentList');
 	commentList.appendChild(listItem);
+	root.appendChild(commentList);
 };
 // build homepage
 const HomePage = () => {
@@ -53,7 +55,7 @@ const HomePage = () => {
 	const audioPlayer = document.createElement('audio');
 	audioPlayer.classList.add('audio');
 	audioPlayer.setAttribute('controls', 'controls');
-	audioPlayer.innerText = 'Your browser does not support HTML5 audio.'
+	audioPlayer.innerText = 'Your browser does not support HTML5 audio.';
 	audioPlayer.appendChild(audioSource);
 	const nameField = document.createElement('input');
 	nameField.classList.add('name');
@@ -69,8 +71,6 @@ const HomePage = () => {
 	submitButton.setAttribute('type', 'submit');
 	submitButton.setAttribute('value', 'Submit');
 	submitButton.addEventListener('click', bindData);
-	// submitButton.onclick = bindData();
-	// apend form elements to form
 	const form = document.createElement('form');
 	form.appendChild(nameField);
 	form.appendChild(commentField);
