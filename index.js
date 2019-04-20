@@ -24,6 +24,7 @@ const bindData = (e) => {
 	} else {
 		console.log('Success: ', {data});
 		renderData(data);
+		form.reset();
 	}
 };
 // render data to screen
@@ -72,6 +73,7 @@ const HomePage = () => {
 	submitButton.setAttribute('value', 'Submit');
 	submitButton.addEventListener('click', bindData);
 	const form = document.createElement('form');
+	form.id = 'form';
 	form.appendChild(nameField);
 	form.appendChild(commentField);
 	form.appendChild(submitButton);
