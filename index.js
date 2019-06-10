@@ -6,7 +6,7 @@ const getName = () => {
 const getComment = () => {
 	let comment = document.getElementsByClassName('comment')[0].value;
 	return comment;
-}
+};
 // capture audio timestamp
 const getTimeStamp = () => {
 	let audio = document.getElementsByClassName('audio')[0];
@@ -39,12 +39,7 @@ const bindData = (e) => {
 	}
 };
 // render data to screen
-const renderData = (data) => {
-	const {
-		name,
-		comment,
-		audioTimeStamp
-	} = data;
+const renderData = ({ name, comment, audioTimeStamp }) => {
 	let listItemData = document.createElement('p');
 	listItemData.classList.add('listItemData');
 	listItemData.innerText = `${name}: ${comment} @ ${audioTimeStamp}`;
@@ -66,26 +61,6 @@ const HomePage = () => {
 	description.classList.add('description');
 	description.innerText =
 		'A custom audio feature built for the SoundTap platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.';
-	// attribution
-	const website = document.createElement('a');
-	website.classList.add('attribution');
-	website.innerText = 'website';
-	website.setAttribute('href', 'http://xavier.fun');
-	website.setAttribute('target', '_blank');
-	const linkedin = document.createElement('a');
-	linkedin.classList.add('attribution');
-	linkedin.innerText = 'linkedin';
-	linkedin.setAttribute('href', 'https://linkedin.com/in/xduncan');
-	linkedin.setAttribute('target', '_blank');
-	const github = document.createElement('a');
-	github.classList.add('attribution');
-	github.innerText = 'github';
-	github.setAttribute('href', 'https://github.com/xmd404');
-	github.setAttribute('target', '_blank');
-	const attribution = document.createElement('footer');
-	attribution.appendChild(website);
-	attribution.appendChild(linkedin);
-	attribution.appendChild(github);
 	// audio player
 	const audioSource = document.createElement('source');
 	audioSource.setAttribute('src', './assets/coltrane.mp3');

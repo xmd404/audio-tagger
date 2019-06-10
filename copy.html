@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Page Information
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <title>audio-tagger</title>
+    <meta name="description" content="audio-tagger">
+    <meta name="author" content="Xavier Duncan">
+    <!-- Stylesheets
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- Icons (Font Awesome)
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://use.fontawesome.com/67dcdad004.js"></script>
+    <!-- Favicon
+    ––––––––––––––––––––––––––––––––––––––––––––––––––
+    <link rel="icon" type="images/ico" href="images/favicon.ico"> -->
+</head>
+<body>
+    <div id='root'></div>
+    <div class="bgimg w3-container w3-animate-opacity w3-text-white">
+        <br/>
+        <div class="w3-content w3-large" style="max-width:650px">
+            <h4><b><i class="fa fa-headphones"></i>&nbsp; audio-tagger</b></h4>
+            <hr style="margin:auto;width:100%">
+            <p>A custom audio feature built for the <a href="https://soundtap.me" target='_blank'>SoundTap</a> platform. It allows users to post data that binds to time stamps. During playback, the data will appear during the time stamp it originally posted at.</p>
+            <audio class="audio" style="width: 100%;" controls>
+                <source src="./assets/coltrane.mp3" type="audio/mp3">
+                Your browser does not support HTML5 audio.
+            </audio>
+            <br/>
+            <hr/>
+            <form>
+                <input class="w3-input name" type="text" placeholder="Name" required>
+                <input class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
+                <br />
+                <button
+                    class="w3-btn w3-green"
+                    onclick="bindData(), this.form.reset()">
+                    <i class="fa fa-send"></i>
+                    &nbsp; Post
+                </button>
+                <input type="submit" style="display:none"/>
+            </form>
+            <div>
+                <ul id="comments"></ul>
+            </div>
+        </div>
+        <div class="w3-content w3-large" style="max-width:650px">
+            <hr style="margin:auto;width:100%">
+            <br/>
+            <a href="http://xavier.fun" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0";></i></a>
+            <a href="https://linkedin.com/in/xduncan" target="_blank"><i class="fa fa-linkedin-square" style="padding: 0 20px 0 0";></i></a>
+            <a href="https://github.com/xmd404" target="_blank"><i class="fa fa-github-alt"></i></a>
+        </div>
+        <br/>
+    </div>
+
+    <!-- JavaScript
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="index.js"></script>
+</body>
+</html>
