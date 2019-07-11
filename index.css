@@ -1,9 +1,18 @@
-body, h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
+body,
+h1 {
+    font-family: "Raleway", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
 .listItem {
     list-style: none;
 }
-u {    
+
+u {
     border-bottom: 1px dashed #FFF;
     text-decoration: none;
 }
