@@ -1,11 +1,5 @@
 body, h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
-.bgimg {
-    background-color: #000;
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
-}
 .listItem {
     list-style: none;
 }
