@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -9,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Page Information
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <title>audio-tagger</title>
+    <title>SoundTap</title>
     <meta name="description" content="audio-tagger">
     <meta name="author" content="Xavier Duncan">
     <!-- Stylesheets
@@ -24,22 +23,32 @@
     ––––––––––––––––––––––––––––––––––––––––––––––––––
     <link rel="icon" type="images/ico" href="images/favicon.ico"> -->
 </head>
-
 <body>
     <div class="w3-container w3-animate-opacity">
-        <br />
         <div class="w3-content w3-large" style="max-width:650px">
-            <h4><b><i class="fa fa-headphones"></i>&nbsp; audio-tagger</b></h4>
-            <hr style="margin:auto; width:100%">
+            <p><b>soundtap</b> &nbsp;|&nbsp; voice + audio technologies</p>
+            <br />
+            <!-- File Upload & Edit -->
             <p>
-                A custom audio feature built for the <a href="https://soundtap.me" target='_blank'>SoundTap</a> platform. It allows users to post data that binds to time stamps.
+                1.&nbsp; Create, edit, and share your taps.
             </p>
-            <audio class="audio" style="width: 100%;" controls>
+            <br />
+            <input type="file" id="input" />
+            <br /><br />
+            <audio id="sound" style="width:100%;" controls></audio>
+            <br />
+            <!-- Audio Tagging -->
+            <br />
+            <p>
+                2.&nbsp; Tag taps w/ reactions, video, and audio clips.
+            </p>
+            <br />
+            <audio class="audio" style="width:100%;" controls>
                 <source src="./assets/coltrane.mp3" type="audio/mp3">
                 Your browser does not support HTML5 audio.
             </audio>
             <br />
-            <hr />
+            <br />
             <form>
                 <input class="w3-input name" type="text" placeholder="Name" required>
                 <input class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
@@ -48,23 +57,22 @@
                     <i class="fa fa-send"></i>
                     &nbsp; Post
                 </button>
-                <input type="submit" style="display:none" />
+                <input type="submit" style="display:none;" />
             </form>
             <div>
                 <ul id="comments"></ul>
             </div>
         </div>
-        <div class="w3-content w3-large" style="max-width:650px">
-            <hr style="margin:auto;width:100%">
+        <br />
+        <div class="w3-content w3-large" style="max-width:650px;">
+            <hr style="margin:auto;width:100%;">
             <br />
-            <a href="https://xavier.fun" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0" ;></i></a>
-            <a href="https://linkedin.com/in/xduncan" target="_blank"><i class="fa fa-linkedin-square"
-                    style="padding: 0 20px 0 0" ;></i></a>
+            <a href="https://xavier.fun" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0;"></i></a>
+            <a href="https://linkedin.com/in/xduncan" target="_blank"><i class="fa fa-linkedin-square" style="padding: 0 20px 0 0;"></i></a>
             <a href="https://github.com/xmd404" target="_blank"><i class="fa fa-github-alt"></i></a>
         </div>
         <br />
     </div>
-
     <!-- JavaScript
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="index.js"></script>
