@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="w3-container w3-animate-opacity">
-        <div class="w3-content w3-large" style="max-width:650px">
+        <div class="w3-content w3-large" style="width:650px; max-width:100%;">
             <p><b>soundtap</b>.me</p>
             <br />
             <!-- File Upload & Edit -->
@@ -50,8 +50,8 @@
             <br />
             <br />
             <form>
-                <input class="w3-input name" type="text" placeholder="Name" required>
-                <input class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
+                <input id="name" class="w3-input name" type="text" placeholder="Name" required>
+                <input id="comment" class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
                 <br />
                 <button class="w3-btn w3-green" onclick="bindData(), this.form.reset()">
                     <i class="fa fa-send"></i>
@@ -60,7 +60,7 @@
                 <input type="submit" style="display:none;" />
             </form>
             <div>
-                <ul id="comments"></ul>
+                <ul id="comments" class="comments"></ul>
             </div>
         </div>
         <br />
