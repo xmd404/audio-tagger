@@ -1,19 +1,22 @@
 body,
-h1 {
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
 	font-family: "Raleway", sans-serif;
 }
 
-body,
-html {
-	height: 100%;
-}
-
-.comments {
+#comments {
 	list-style: none;
 	color: yellow;
 }
 
 u {
 	border-bottom: 1px dashed #fff;
+	text-decoration: none;
+}
+
+#listItem {
 	text-decoration: none;
 }
