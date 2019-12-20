@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <title>SoundTap</title>
     <meta charset="utf-8">
+    <meta name="description" content="a voice & sound lab - @xmd404">
+    <meta name="author" content="@xmd404">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Page Information
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <title>SoundTap</title>
-    <meta name="description" content="audio-tagger">
-    <meta name="author" content="Xavier Duncan">
     <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico"/>
-    <!-- Stylesheets
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <!-- Icons (Font Awesome)
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="https://use.fontawesome.com/67dcdad004.js"></script>
-    <!-- Favicon
-    ––––––––––––––––––––––––––––––––––––––––––––––––––
-    <link rel="icon" type="images/ico" href="images/favicon.ico"> -->
 </head>
 <body>
-    <div class="w3-container w3-animate-opacity">
-        <div class="w3-content w3-large" style="width:650px; max-width:100%;">
+    <div class="container">
+        <div style="width:650px; max-width:100%;">
             <p><b>soundtap</b>.me</p>
-            <br />
             <!-- File Upload & Edit -->
             <p>
                 1.&nbsp; Create, edit, and share your taps.
             </p>
-            <br />
             <input type="file" id="input" />
-            <br /><br />
             <audio id="sound" style="width:100%;" controls></audio>
-            <br />
             <!-- Audio Tagging -->
-            <br />
             <p>
                 2.&nbsp; Tag taps w/ reactions, video, and audio clips.
             </p>
-            <br />
             <audio class="audio" style="width:100%;" controls>
                 <source src="./assets/coltrane.mp3" type="audio/mp3">
                 Your browser does not support HTML5 audio.
             </audio>
-            <br />
-            <br />
             <form>
-                <input id="name" class="w3-input name" type="text" placeholder="Name" required>
-                <input id="comment" class="w3-input comment" type="text" placeholder="Enter comment..." required></input>
-                <br />
+                <input id="name" class="name" type="text" placeholder="Name" required>
+                <input id="comment" class="comment" type="text" placeholder="Enter comment..." required></input>
                 <button class="w3-btn w3-green" style="border-radius: 5%; padding: 5px 35px;" onclick="bindData(), this.form.reset()">
                     <i class="fa fa-send"></i>
                     &nbsp;Post
@@ -64,19 +43,18 @@
                 <ul id="comments" class="comments"></ul>
             </div>
         </div>
-        <br />
-        <div class="w3-content w3-large" style="max-width:650px;">
-            <hr style="margin:auto;width:100%;">
-            <br />
-            <a href="https://xavier.fun" target="_blank"><i class="fa fa-globe" style="padding: 0 20px 0 0;"></i></a>
-            <a href="https://twitter.com/xmd404" target="_blank"><i class="fa fa-twitter" style="padding: 0 20px 0 0;"></i></a>
-            <a href="https://github.com/xmd404" target="_blank"><i class="fa fa-github" style="padding: 0 20px 0 0;"></i></a>
+        <div>
+            <a href="https://xavier.fun" target="_blank">
+                <i class="fa fa-globe"></i>
+            </a>
+            <a href="https://twitter.com/xmd404" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://github.com/xmd404" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
         </div>
-        <br />
     </div>
-    <!-- JavaScript
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="index.js"></script>
 </body>
-
 </html>

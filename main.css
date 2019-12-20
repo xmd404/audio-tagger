@@ -7,14 +7,14 @@ html {
 	font-family: "Raleway", sans-serif;
 }
 
-#comments {
-	list-style: none;
-	color: yellow;
-}
-
 u {
 	border-bottom: 1px dashed #fff;
 	text-decoration: none;
+}
+
+#comments {
+	list-style: none;
+	color: yellow;
 }
 
 #listItem {
